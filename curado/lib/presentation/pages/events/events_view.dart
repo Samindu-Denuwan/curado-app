@@ -114,13 +114,21 @@ class _EventsViewState extends State<EventsView> {
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.only(bottom: 16),
-                  child: EventCard(
-                    url: AppConstants.sampleEvents[index].imgUrl,
-                    title: AppConstants.sampleEvents[index].title,
-                    date: AppConstants.sampleEvents[index].date,
-                    time: AppConstants.sampleEvents[index].time,
-                    venue: AppConstants.sampleEvents[index].venue,
-                    type: AppConstants.sampleEvents[index].type,
+                  child: InkWell(
+                    onTap: () {
+                      context.pushNamed(
+                        Pages.eventDetailsRoute.toPathName(),
+                        extra: AppConstants.sampleEvents[index],
+                      );
+                    },
+                    child: EventCard(
+                      url: AppConstants.sampleEvents[index].imgUrl,
+                      title: AppConstants.sampleEvents[index].title,
+                      date: AppConstants.sampleEvents[index].date,
+                      time: AppConstants.sampleEvents[index].time,
+                      venue: AppConstants.sampleEvents[index].venue,
+                      type: AppConstants.sampleEvents[index].type,
+                    ),
                   ),
                 );
               },

@@ -6,7 +6,9 @@ import 'package:curado/presentation/pages/splash/splash_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
+import '../../data/models/event_details_model.dart';
 import '../../presentation/pages/catalogue/catalogue_view.dart';
+import '../../presentation/pages/events/event_detail_view.dart';
 import 'bottom_nav_bar.dart' show BottomNavBar;
 import 'go_router_observer.dart';
 import 'router_services.dart';
@@ -56,7 +58,7 @@ class AppRouter {
                 child: const HomeView(),
               );
             },
-            routes: [],
+            routes: [ ],
           ),
           GoRoute(
             parentNavigatorKey: _shellNavigatorKey,
@@ -80,7 +82,22 @@ class AppRouter {
                 child: const EventsView(),
               );
             },
-            routes: const [],
+            routes: [
+              GoRoute(
+                parentNavigatorKey: _shellNavigatorKey,
+                path: Pages.eventDetailsRoute.toPath(isSubRoute: true),
+                name: Pages.eventDetailsRoute.toPathName(),
+                pageBuilder: (context, state) {
+                  return NoTransitionPage(
+                    key: state.pageKey,
+                    child: EventDetailView(
+                      eventDetails: state.extra as EventDetails?,
+                    ),
+                  );
+                },
+                routes: const [],
+              ),
+            ],
           ),
           GoRoute(
             parentNavigatorKey: _shellNavigatorKey,
@@ -110,6 +127,7 @@ class AppRouter {
           state.matchedLocation.startsWith(Pages.homeRoute.toPath()) ||
           state.matchedLocation.startsWith(Pages.catalogueRoute.toPath()) ||
           state.matchedLocation.startsWith(Pages.eventsRoute.toPath()) ||
+
           state.matchedLocation.startsWith(Pages.accountRoute.toPath());
 
       if (!isInitialized && !isGoingToSplash) {

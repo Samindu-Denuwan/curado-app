@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:go_router/go_router.dart';
 
 import '../../core/themes/colors.dart';
 import '../../core/themes/text_styles.dart';
@@ -11,7 +10,14 @@ class MainTitleWidget extends StatelessWidget {
   final String? title;
   final String? subTitle;
   final void Function()? onTap;
-  const MainTitleWidget({super.key, this.title, this.subTitle, this.onTap});
+  final bool showNextBtn;
+  const MainTitleWidget({
+    super.key,
+    this.title,
+    this.subTitle,
+    this.onTap,
+    this.showNextBtn = true,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +37,10 @@ class MainTitleWidget extends StatelessWidget {
               color: AppColors.textBrown,
             ),
           ),
-          NextButtonWidget(text: subTitle ?? "", onTap: onTap),
+          Visibility(
+            visible: showNextBtn == true,
+            child: NextButtonWidget(text: subTitle ?? "", onTap: onTap),
+          ),
         ],
       ),
     );

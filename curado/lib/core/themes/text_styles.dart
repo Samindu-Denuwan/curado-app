@@ -75,4 +75,10 @@ class AppTextStyles {
     height: 21.6 / 14,
     fontWeight: FontWeight.w500,
   );
+  static TextStyle size14weight400({String? fontFamily}) => GoogleFonts.getFont(
+    fontFamily ?? 'Inter',
+    fontSize: 14,
+    height: 20 / 14,
+    fontWeight: FontWeight.w400,
+  );
 }
