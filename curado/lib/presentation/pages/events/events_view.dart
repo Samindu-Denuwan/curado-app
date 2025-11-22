@@ -18,9 +18,9 @@ class EventsView extends StatefulWidget {
 }
 
 class _EventsViewState extends State<EventsView> {
-  CommonResponse? _selectedRadio;
+  CommonResponse? _selectedRadio = AppConstants.upComingPastEvent[0];
 
-  String? _selectedDropdown = AppConstants.eventTypesList[0] ?? "";
+  String? _selectedDropdown = AppConstants.eventTypesList[0];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
