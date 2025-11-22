@@ -1,4 +1,5 @@
 import 'package:curado/core/routes/router_services.dart';
+import 'package:curado/core/themes/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -35,6 +36,9 @@ class _BaseAppState extends ConsumerState<BaseApp> {
 
           routerConfig: routerServices.router,
           debugShowCheckedModeBanner: true,
+          theme: ThemeData(
+            scaffoldBackgroundColor: AppColors.bgColor, // Your desired color
+          ),
         );
       },
     );

@@ -10,7 +10,9 @@ import '../../core/utils/app_images.dart';
 class ArtistCard extends StatelessWidget {
   final String? url;
   final String? name;
-  const ArtistCard({super.key, this.url, this.name});
+  final bool? isGridView;
+
+  const ArtistCard({super.key, this.url, this.name, this.isGridView = false});
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +56,7 @@ class ArtistCard extends StatelessWidget {
               ),
             ),
           ),
-          12.verticalSpace,
+          isGridView == true ? 0.verticalSpace : 12.verticalSpace,
           Center(
             child: Text(
               textAlign: TextAlign.center,

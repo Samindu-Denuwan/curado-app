@@ -1,4 +1,5 @@
 import '../../data/models/art_details_model.dart';
+import '../../data/models/artist_details_model.dart';
 import '../../data/models/event_details_model.dart';
 import '../../data/models/response_model.dart';
 
@@ -212,4 +213,74 @@ class AppConstants {
     "Orientation",
     "Art Work",
   ];
+
+  static final List<ArtistDetails> sampleArtistDetailsList = [
+    ArtistDetails(
+      id: "pradeep-chandrasiri",
+      name: "Pradeep Chandrasiri",
+      imgUrl: "https://curadoartspace.com/wp-content/uploads/2025/09/website-100.jpg",
+      about: "Pradeep Chandrasiri is a celebrated Sri Lankan visual artist and scenographer with over 25 years of experience. His work blends traditional Sri Lankan motifs with contemporary visual language, exploring human emotions and societal narratives through bold compositions and intricate detailing.",
+    ),
+    ArtistDetails(
+      id: "ruwangi-amarasinghe",
+      name: "Ruwangi Amarasinghe",
+      imgUrl: "https://curadoartspace.com/wp-content/uploads/2025/09/website-87.jpg",
+      about: "Ruwangi Amarasinghe is an accomplished painter and illustrator known for her vibrant use of acrylics and mixed media. She combines realistic representation with abstract elements, often reflecting on cultural identity and personal introspection in her pieces.",
+    ),
+    ArtistDetails(
+      id: "neleisha-weerasinghe",
+      name: "Neleisha Weerasinghe",
+      imgUrl: "https://curadoartspace.com/wp-content/uploads/2025/09/website-2025-09-10T100915.322.jpg",
+      about: "Neleisha Weerasinghe is recognized for her expressive landscapes and innovative use of color. Her work frequently explores the interplay between natural and urban environments, evoking both serenity and emotional depth through bold textures and striking palettes.",
+    ),
+    ArtistDetails(
+      id: "shane-walgama",
+      name: "Shane Walgama",
+      imgUrl: "https://curadoartspace.com/wp-content/uploads/2025/10/website-2025-10-23T124034.223.jpg",
+      about: "Shane Walgama is a self-taught artist whose work draws inspiration from pre-colonial Sri Lankan history and mythology. He employs a wide range of media, including ink, watercolor, and charcoal, to weave compelling narratives that bridge the past and present.",
+    ),
+    ArtistDetails(
+      id: "dillai-joseph",
+      name: "Dillai Joseph",
+      imgUrl: "https://curadoartspace.com/wp-content/uploads/2025/10/website-2025-10-24T114650.825.jpg",
+      about: "Dillai Joseph is a painter and visual storyteller who works primarily with watercolors, acrylics, and oils. His art explores the human condition and its interaction with the environment, capturing emotion and movement through dynamic brushwork and layered textures.",
+    ),
+    ArtistDetails(
+      id: "shyamali-perera",
+      name: "Shyamali Perera",
+      imgUrl: "https://curadoartspace.com/wp-content/uploads/2025/09/website-95.jpg",
+      about: "With over forty years of artistic experience, Shyamali Perera fuses classical techniques with contemporary aesthetics. Her work spans portraiture, landscapes, and abstract forms, emphasizing balance, color harmony, and emotional resonance.",
+    ),
+    ArtistDetails(
+      id: "catharina-danial",
+      name: "Catharina Danial",
+      imgUrl: "https://curadoartspace.com/wp-content/uploads/2025/09/website-88.jpg",
+      about: "Catharina Danial is a contemporary artist from Jaffna whose work explores themes of identity, displacement, and memory. She utilizes mixed media, layering textures and colors to create visually rich narratives that engage with personal and collective histories.",
+    ),
+    ArtistDetails(
+      id: "anura-dahanayake",
+      name: "Anura Dahanayake",
+      imgUrl: "https://curadoartspace.com/wp-content/uploads/2025/10/website-2025-10-23T120548.581.jpg",
+      about: "Anura Dahanayake specializes in abstract and semi-abstract paintings that investigate the relationship between form, color, and emotion. His work often incorporates dynamic textures and bold gestures to evoke introspection and mood.",
+    ),
+    ArtistDetails(
+      id: "aparna-binduhewa",
+      name: "Aparna Binduhewa",
+      imgUrl: "https://curadoartspace.com/wp-content/uploads/2025/09/website-2025-09-12T145153.003.jpg",
+      about: "Aparna Binduhewa is known for her intricate mixed-media work that fuses traditional techniques with contemporary themes. Her art often addresses environmental concerns, cultural heritage, and personal identity.",
+    ),
+    ArtistDetails(
+      id: "aruni-wijegunawardene",
+      name: "Aruni Wijegunawardene",
+      imgUrl: "https://curadoartspace.com/wp-content/uploads/2025/10/website-2025-10-23T120850.296.jpg",
+      about: "Aruni Wijegunawardene’s paintings and illustrations explore the nuances of human relationships and social interactions. She uses delicate brushwork and muted palettes to convey subtle emotions and layered storytelling.",
+    ),
+    ArtistDetails(
+      id: "asela-abeywardene",
+      name: "Asela Abeywardene",
+      imgUrl: "https://curadoartspace.com/wp-content/uploads/2025/11/website-2025-11-04T122659.803.jpg",
+      about: "Asela Abeywardene is a contemporary visual artist whose work spans landscapes, abstract compositions, and conceptual art. He focuses on texture, color contrast, and the interplay of light and shadow to evoke mood and atmosphere.",
+    ),
+  ];
+
 }
