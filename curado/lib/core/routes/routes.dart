@@ -1,4 +1,5 @@
 import 'package:curado/core/routes/pages.dart';
+import 'package:curado/data/models/art_details_model.dart';
 import 'package:curado/presentation/pages/account/account_view.dart';
 import 'package:curado/presentation/pages/catalogue/artist_details_view.dart';
 import 'package:curado/presentation/pages/events/events_view.dart';
@@ -11,6 +12,7 @@ import '../../data/models/artist_details_model.dart';
 import '../../data/models/event_details_model.dart';
 import '../../presentation/pages/catalogue/catalogue_view.dart';
 import '../../presentation/pages/events/event_detail_view.dart';
+import '../../presentation/pages/home/art_details_view.dart';
 import 'bottom_nav_bar.dart' show BottomNavBar;
 import 'go_router_observer.dart';
 import 'router_services.dart';
@@ -60,7 +62,34 @@ class AppRouter {
                 child: const HomeView(),
               );
             },
-            routes: [],
+            routes: [
+              GoRoute(
+                parentNavigatorKey: _shellNavigatorKey,
+                path: Pages.artDetailsRoute.toPath(isSubRoute: true),
+                name: Pages.artDetailsRoute.toPathName(),
+                pageBuilder: (context, state) {
+                  return CustomTransitionPage(
+                    key: state.pageKey,
+                    child: ArtDetailsView(
+                      artDetails: state.extra as ArtDetails?,
+                    ),
+                    transitionsBuilder:
+                        (
+                          BuildContext context,
+                          Animation<double> animation,
+                          Animation<double> secondaryAnimation,
+                          Widget child,
+                        ) {
+                          return FadeTransition(
+                            opacity: animation,
+                            child: child,
+                          );
+                        },
+                  );
+                },
+                routes: const [],
+              ),
+            ],
           ),
           GoRoute(
             parentNavigatorKey: _shellNavigatorKey,

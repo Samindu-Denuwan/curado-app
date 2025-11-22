@@ -36,12 +36,20 @@ class HomeView extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: const EdgeInsets.only(right: 23),
-                    child: ArtWorkCard(
-                      title: AppConstants.sampleArtDetails[index].art?.title,
-                      designer:
-                          AppConstants.sampleArtDetails[index].designer?.name,
-                      type: AppConstants.sampleArtDetails[index].art?.type,
-                      url: AppConstants.sampleArtDetails[index].art?.imgUrl,
+                    child: InkWell(
+                      onTap: () {
+                        context.pushNamed(
+                          Pages.artDetailsRoute.toPathName(),
+                          extra: AppConstants.sampleArtDetails[index],
+                        );
+                      },
+                      child: ArtWorkCard(
+                        title: AppConstants.sampleArtDetails[index].art?.title,
+                        designer:
+                            AppConstants.sampleArtDetails[index].designer?.name,
+                        type: AppConstants.sampleArtDetails[index].art?.type,
+                        url: AppConstants.sampleArtDetails[index].art?.imgUrl,
+                      ),
                     ),
                   );
                 },

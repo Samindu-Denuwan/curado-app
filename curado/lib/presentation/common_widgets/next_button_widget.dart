@@ -17,6 +17,7 @@ class NextButtonWidget extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             text ?? "",
