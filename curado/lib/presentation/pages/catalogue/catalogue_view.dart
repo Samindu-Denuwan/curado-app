@@ -38,10 +38,18 @@ class CatalogueView extends StatelessWidget {
               ),
               itemBuilder: (context, index) {
                 final artist = AppConstants.sampleArtistDetailsList[index];
-                return ArtistCard(
-                  url: artist.imgUrl,
-                  name: artist.name,
-                  isGridView: true,
+                return InkWell(
+                  onTap: () {
+                    context.pushNamed(
+                      Pages.artistDetailsRoute.toPathName(),
+                      extra: AppConstants.sampleArtistDetailsList[index],
+                    );
+                  },
+                  child: ArtistCard(
+                    url: artist.imgUrl,
+                    name: artist.name,
+                    isGridView: true,
+                  ),
                 );
               },
             ),

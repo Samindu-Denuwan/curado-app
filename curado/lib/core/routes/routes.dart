@@ -1,11 +1,13 @@
 import 'package:curado/core/routes/pages.dart';
 import 'package:curado/presentation/pages/account/account_view.dart';
+import 'package:curado/presentation/pages/catalogue/artist_details_view.dart';
 import 'package:curado/presentation/pages/events/events_view.dart';
 import 'package:curado/presentation/pages/home/home_view.dart';
 import 'package:curado/presentation/pages/splash/splash_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
+import '../../data/models/artist_details_model.dart';
 import '../../data/models/event_details_model.dart';
 import '../../presentation/pages/catalogue/catalogue_view.dart';
 import '../../presentation/pages/events/event_detail_view.dart';
@@ -70,7 +72,34 @@ class AppRouter {
                 child: const CatalogueView(),
               );
             },
-            routes: const [],
+            routes: [
+              GoRoute(
+                parentNavigatorKey: _shellNavigatorKey,
+                path: Pages.artistDetailsRoute.toPath(isSubRoute: true),
+                name: Pages.artistDetailsRoute.toPathName(),
+                pageBuilder: (context, state) {
+                  return CustomTransitionPage(
+                    key: state.pageKey,
+                    child: ArtistDetailsView(
+                      artistDetails: state.extra as ArtistDetails?,
+                    ),
+                    transitionsBuilder:
+                        (
+                          BuildContext context,
+                          Animation<double> animation,
+                          Animation<double> secondaryAnimation,
+                          Widget child,
+                        ) {
+                          return FadeTransition(
+                            opacity: animation,
+                            child: child,
+                          );
+                        },
+                  );
+                },
+                routes: const [],
+              ),
+            ],
           ),
           GoRoute(
             parentNavigatorKey: _shellNavigatorKey,
@@ -88,11 +117,23 @@ class AppRouter {
                 path: Pages.eventDetailsRoute.toPath(isSubRoute: true),
                 name: Pages.eventDetailsRoute.toPathName(),
                 pageBuilder: (context, state) {
-                  return NoTransitionPage(
+                  return CustomTransitionPage(
                     key: state.pageKey,
                     child: EventDetailView(
                       eventDetails: state.extra as EventDetails?,
                     ),
+                    transitionsBuilder:
+                        (
+                          BuildContext context,
+                          Animation<double> animation,
+                          Animation<double> secondaryAnimation,
+                          Widget child,
+                        ) {
+                          return FadeTransition(
+                            opacity: animation,
+                            child: child,
+                          );
+                        },
                   );
                 },
                 routes: const [],

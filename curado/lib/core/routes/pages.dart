@@ -5,6 +5,7 @@ class Pages {
   static const eventsRoute = "events";
   static const accountRoute = "account";
   static const eventDetailsRoute = "event_details";
+  static const artistDetailsRoute = "artist_details";
 }
 
 extension PagesExtension on String {
