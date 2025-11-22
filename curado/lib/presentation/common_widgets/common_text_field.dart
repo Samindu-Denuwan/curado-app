@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:solar_icons/solar_icons.dart';
 
 import '../../core/themes/colors.dart';
 import '../../core/themes/text_styles.dart';
@@ -10,6 +12,7 @@ class CommonTextField extends StatelessWidget {
   final String? hint;
   final TextEditingController? controller;
   final bool isTextArea;
+  final bool isReadOnly;
 
   const CommonTextField({
     super.key,
@@ -17,6 +20,7 @@ class CommonTextField extends StatelessWidget {
     this.hint,
     required this.controller,
     this.isTextArea = false,
+    this.isReadOnly = false,
   });
 
   @override
@@ -33,6 +37,7 @@ class CommonTextField extends StatelessWidget {
         ),
         8.verticalSpace,
         TextFormField(
+          readOnly: isReadOnly,
           controller: controller,
           onChanged: (text) {},
           enableInteractiveSelection: true,
@@ -66,6 +71,51 @@ class CommonTextField extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+class CommonSearchTextField extends StatelessWidget {
+  final String? hint;
+  final TextEditingController? controller;
+
+  const CommonSearchTextField({super.key, this.hint, required this.controller});
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      controller: controller,
+      onChanged: (text) {},
+      enableInteractiveSelection: true,
+      maxLengthEnforcement: MaxLengthEnforcement.enforced,
+      keyboardType: TextInputType.text,
+
+      decoration: InputDecoration(
+        suffixIcon: Icon(
+          CupertinoIcons.search,
+          color: AppColors.searchBarColor,
+        ),
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 12.5,
+          vertical: 15,
+        ),
+        fillColor: AppColors.white,
+
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: AppColors.neutral300, width: 1),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: AppColors.neutral300, width: 1),
+        ),
+
+        hintText: hint,
+        hintStyle: AppTextStyles.size13weight400().copyWith(
+          color: AppColors.searchBarColor,
+        ),
+      ),
+      style: AppTextStyles.size16weight400().copyWith(
+        color: AppColors.neutral700,
+      ),
     );
   }
 }

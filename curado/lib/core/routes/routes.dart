@@ -125,7 +125,7 @@ class AppRouter {
             pageBuilder: (context, state) {
               return NoTransitionPage(
                 key: state.pageKey,
-                child: const CatalogueView(),
+                child: CatalogueView(),
               );
             },
             routes: [

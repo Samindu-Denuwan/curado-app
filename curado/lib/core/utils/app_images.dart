@@ -20,6 +20,7 @@ class AppImages {
   static String get menuIcon => '${kSVGImagePath}menu$kSVGType';
   static String get next => '${kSVGImagePath}next$kSVGType';
   static String get back => '${kSVGImagePath}back$kSVGType';
+  static String get filter => '${kSVGImagePath}filter$kSVGType';
 
   ///PNG
   static String get curadoLogo => '${kPNGImagePath}curado_logo$kPngType';

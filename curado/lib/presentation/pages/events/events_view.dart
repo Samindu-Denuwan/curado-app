@@ -80,6 +80,7 @@ class _EventsViewState extends State<EventsView> {
                   style: AppTextStyles.size14weight500().copyWith(
                     color: AppColors.textBlack,
                   ),
+                  dropdownColor: Colors.white,
                   underline: SizedBox.shrink(),
                   padding: EdgeInsets.symmetric(horizontal: 10),
                   value: _selectedDropdown,
