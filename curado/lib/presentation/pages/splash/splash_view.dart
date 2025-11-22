@@ -1,4 +1,4 @@
-import 'package:curado/core/routes/routes.dart';
+import 'package:curado/core/utils/app_images.dart';
 import 'package:flutter/material.dart';
 
 import '../../../app/injection.dart';
@@ -11,23 +11,68 @@ class SplashView extends StatefulWidget {
   State<SplashView> createState() => _SplashViewState();
 }
 
-class _SplashViewState extends State<SplashView> {
+class _SplashViewState extends State<SplashView>
+    with SingleTickerProviderStateMixin {
   final RouterServices routerServices = sl<RouterServices>();
+
+  late AnimationController _controller;
+  late Animation<double> _scaleAnimation;
+  late Animation<double> _opacityAnimation;
 
   @override
   void initState() {
-    WidgetsBinding.instance.addPostFrameCallback((e) => _mockLoad());
     super.initState();
+
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1200),
+    );
+
+    _scaleAnimation = Tween<double>(
+      begin: 0.5,
+      end: 1.0,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOutBack));
+
+    _opacityAnimation = Tween<double>(
+      begin: 0,
+      end: 1,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeIn));
+
+    _controller.forward();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => _mockLoad());
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(backgroundColor: Colors.greenAccent);
+    return Scaffold(
+      body: Center(
+        child: AnimatedBuilder(
+          animation: _controller,
+          builder: (_, child) {
+            return Opacity(
+              opacity: _opacityAnimation.value,
+              child: Transform.scale(
+                scale: _scaleAnimation.value,
+                child: child,
+              ),
+            );
+          },
+          child: Image.asset(AppImages.curadoLogo, width: 200, height: 200),
+        ),
+      ),
+    );
   }
 
   void _mockLoad() {
     Future.delayed(
-      Duration(seconds: 3),
+      const Duration(seconds: 2),
       () => routerServices.isInitialized = true,
     );
   }

@@ -20,6 +20,7 @@ class BottomNavBar extends StatelessWidget {
             toolbarHeight: 72,
             surfaceTintColor: Colors.transparent,
             backgroundColor: AppColors.white,
+            centerTitle: true,
             leading: Padding(
               padding: const EdgeInsets.only(left: 15),
               child: Icon(Icons.menu, size: 30, color: AppColors.textBlack),
