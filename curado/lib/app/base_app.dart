@@ -35,10 +35,8 @@ class _BaseAppState extends ConsumerState<BaseApp> {
           ),
 
           routerConfig: routerServices.router,
-          debugShowCheckedModeBanner: true,
-          theme: ThemeData(
-            scaffoldBackgroundColor: AppColors.bgColor, // Your desired color
-          ),
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(scaffoldBackgroundColor: AppColors.bgColor),
         );
       },
     );
