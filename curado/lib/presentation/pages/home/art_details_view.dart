@@ -160,7 +160,15 @@ class ArtDetailsView extends StatelessWidget {
               ),
             ),
             20.verticalSpace,
-            NextButtonWidget(text: "ADD TO INQUIRY", onTap: () {}),
+            NextButtonWidget(
+              text: "ADD TO INQUIRY",
+              onTap: () {
+                context.pushNamed(
+                  Pages.artInquiryRoute.toPathName(),
+                  extra: artDetails,
+                );
+              },
+            ),
 
             45.verticalSpace,
             MainTitleWidget(title: "SIMILAR ARTWORKS", showNextBtn: false),

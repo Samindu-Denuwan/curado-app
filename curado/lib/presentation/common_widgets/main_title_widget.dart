@@ -69,28 +69,31 @@ class PageTitleWidget extends StatelessWidget {
             onTap: onTap,
             child: SvgPicture.asset(width: 26, AppImages.back),
           ),
-          Column(
-            children: [
-              Text(
-                title ?? "",
-                style: AppTextStyles.size16weight500().copyWith(
-                  color: AppColors.textBrown,
+          Flexible(
+            child: Column(
+              children: [
+                Text(
+                  textAlign: TextAlign.center,
+                  title ?? "",
+                  style: AppTextStyles.size16weight500().copyWith(
+                    color: AppColors.textBrown,
+                  ),
                 ),
-              ),
-              Visibility(
-                visible: subTitle != null && subTitle != "",
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 10),
-                  child: Text(
-                    subTitle ?? "",
-                    style: AppTextStyles.size12weight300().copyWith(
-                      color: AppColors.textBrown,
-                      fontStyle: FontStyle.italic,
+                Visibility(
+                  visible: subTitle != null && subTitle != "",
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: Text(
+                      subTitle ?? "",
+                      style: AppTextStyles.size12weight300().copyWith(
+                        color: AppColors.textBrown,
+                        fontStyle: FontStyle.italic,
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
           SizedBox.shrink(),
         ],

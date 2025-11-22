@@ -7,6 +7,7 @@ class Pages {
   static const eventDetailsRoute = "event_details";
   static const artistDetailsRoute = "artist_details";
   static const artDetailsRoute = "art_details";
+  static const artInquiryRoute = "art_inquiry";
 }
 
 extension PagesExtension on String {
