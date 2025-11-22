@@ -47,7 +47,7 @@ class CatalogueView extends StatelessWidget {
                   },
                   child: ArtistCard(
                     url: artist.imgUrl,
-                    name: artist.name,
+                    name: artist.name?.toUpperCase(),
                     isGridView: true,
                   ),
                 );
