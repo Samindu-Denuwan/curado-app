@@ -1,5 +1,6 @@
 import '../../data/models/art_details_model.dart';
 import '../../data/models/event_details_model.dart';
+import '../../data/models/response_model.dart';
 
 class AppConstants {
   static String defaultImageUrl =
@@ -108,7 +109,7 @@ class AppConstants {
       time: "10:00 AM – 05:00 PM",
       host: "Curado Art Space",
       venue: "Curado Art Space",
-      type: "Exhibition",
+      type: "Art Work",
       about:
           "A curated exhibition showcasing Sri Lankan art that captures the essence of time and change.",
       gallary: [
@@ -148,7 +149,7 @@ class AppConstants {
       time: "10:00 AM – 05:00 PM",
       host: "Curado Art Space",
       venue: "Curado Art Space",
-      type: "Exhibition",
+      type: "Orientation",
       about:
           "SANKHĀRĀ is a contemplative exhibition that invites reflection on thoughts, formations, and experiences.",
       gallary: [
@@ -200,5 +201,15 @@ class AppConstants {
         "https://curadoartspace.com/wp-content/uploads/2025/07/WhatsApp-Image-2025-08-04-at-10.43.42.jpeg",
       ],
     ),
+  ];
+
+  static List<CommonResponse> upComingPastEvent = [
+    CommonResponse(id: "UPC", description: "UPCOMING EVENTS"),
+    CommonResponse(id: "PAS", description: "PAST EVENTS"),
+  ];
+  static List<String> eventTypesList = [
+    "Exhibition",
+    "Orientation",
+    "Art Work",
   ];
 }

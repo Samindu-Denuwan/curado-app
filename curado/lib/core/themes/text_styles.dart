@@ -28,6 +28,12 @@ class AppTextStyles {
     height: 14.4 / 12,
     fontWeight: FontWeight.w400,
   );
+  static TextStyle size12weight300({String? fontFamily}) => GoogleFonts.getFont(
+    fontFamily ?? 'Inter',
+    fontSize: 12,
+    height: 21.6 / 12,
+    fontWeight: FontWeight.w300,
+  );
   static TextStyle size12weight500({String? fontFamily}) => GoogleFonts.getFont(
     fontFamily ?? 'Inter',
     fontSize: 12,
@@ -61,5 +67,12 @@ class AppTextStyles {
     fontSize: 13,
     height: 15.6 / 13,
     fontWeight: FontWeight.w200,
+  );
+
+  static TextStyle size14weight500({String? fontFamily}) => GoogleFonts.getFont(
+    fontFamily ?? 'Inter',
+    fontSize: 14,
+    height: 21.6 / 14,
+    fontWeight: FontWeight.w500,
   );
 }

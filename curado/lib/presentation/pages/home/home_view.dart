@@ -1,7 +1,9 @@
 import 'package:curado/presentation/common_widgets/event_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
+import '../../../core/routes/pages.dart';
 import '../../../core/utils/app_contants.dart';
 import '../../common_widgets/art_work_card.dart';
 import '../../common_widgets/artist_card.dart';
@@ -51,7 +53,9 @@ class HomeView extends StatelessWidget {
             MainTitleWidget(
               title: "FEATURE ARTISTS",
               subTitle: "VIEW ALL ARTISTS",
-              onTap: () {},
+              onTap: () {
+                GoRouter.of(context).goNamed(Pages.catalogueRoute.toPathName());
+              },
             ),
             45.verticalSpace,
             SizedBox(
@@ -78,7 +82,9 @@ class HomeView extends StatelessWidget {
             MainTitleWidget(
               title: "UPCOMING EVENTS",
               subTitle: "VIEW ALL EVENTS",
-              onTap: () {},
+              onTap: () {
+                GoRouter.of(context).goNamed(Pages.eventsRoute.toPathName());
+              },
             ),
             48.verticalSpace,
             ListView.builder(

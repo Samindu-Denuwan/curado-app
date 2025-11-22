@@ -65,95 +65,97 @@ class EventCard extends StatelessWidget {
             ),
           ),
           12.horizontalSpace,
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              18.verticalSpace,
-              Text(
-                textAlign: TextAlign.center,
-                title ?? "",
-                style: AppTextStyles.size16weight600().copyWith(
-                  color: AppColors.textBlack,
+          Flexible(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                18.verticalSpace,
+                Text(
+                  textAlign: TextAlign.start,
+                  title ?? "",
+                  style: AppTextStyles.size16weight600().copyWith(
+                    color: AppColors.textBlack,
+                  ),
                 ),
-              ),
-              10.verticalSpace,
-              RichText(
-                text: TextSpan(
-                  children: [
-                    TextSpan(
-                      text: "Date: ",
-                      style: AppTextStyles.size12weight400().copyWith(
-                        color: AppColors.textBlack,
+                10.verticalSpace,
+                RichText(
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: "Date: ",
+                        style: AppTextStyles.size12weight400().copyWith(
+                          color: AppColors.textBlack,
+                        ),
                       ),
-                    ),
-                    TextSpan(
-                      text: date ?? "",
-                      style: AppTextStyles.size12weight400().copyWith(
-                        color: AppColors.textBlack,
+                      TextSpan(
+                        text: date ?? "",
+                        style: AppTextStyles.size12weight400().copyWith(
+                          color: AppColors.textBlack,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-              10.verticalSpace,
-              RichText(
-                text: TextSpan(
-                  children: [
-                    TextSpan(
-                      text: "Time: ",
-                      style: AppTextStyles.size12weight400().copyWith(
-                        color: AppColors.textBlack,
+                10.verticalSpace,
+                RichText(
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: "Time: ",
+                        style: AppTextStyles.size12weight400().copyWith(
+                          color: AppColors.textBlack,
+                        ),
                       ),
-                    ),
-                    TextSpan(
-                      text: time ?? "",
-                      style: AppTextStyles.size12weight400().copyWith(
-                        color: AppColors.textBlack,
+                      TextSpan(
+                        text: time ?? "",
+                        style: AppTextStyles.size12weight400().copyWith(
+                          color: AppColors.textBlack,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-              10.verticalSpace,
-              RichText(
-                text: TextSpan(
-                  children: [
-                    TextSpan(
-                      text: "Venue: ",
-                      style: AppTextStyles.size12weight400().copyWith(
-                        color: AppColors.textBlack,
+                10.verticalSpace,
+                RichText(
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: "Venue: ",
+                        style: AppTextStyles.size12weight400().copyWith(
+                          color: AppColors.textBlack,
+                        ),
                       ),
-                    ),
-                    TextSpan(
-                      text: venue ?? "",
-                      style: AppTextStyles.size12weight400().copyWith(
-                        color: AppColors.textBlack,
+                      TextSpan(
+                        text: venue ?? "",
+                        style: AppTextStyles.size12weight400().copyWith(
+                          color: AppColors.textBlack,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-              10.verticalSpace,
-              RichText(
-                text: TextSpan(
-                  children: [
-                    TextSpan(
-                      text: "Type: ",
-                      style: AppTextStyles.size12weight400().copyWith(
-                        color: AppColors.textBlack,
+                10.verticalSpace,
+                RichText(
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: "Type: ",
+                        style: AppTextStyles.size12weight400().copyWith(
+                          color: AppColors.textBlack,
+                        ),
                       ),
-                    ),
-                    TextSpan(
-                      text: type ?? "",
-                      style: AppTextStyles.size12weight400().copyWith(
-                        color: AppColors.textBlack,
+                      TextSpan(
+                        text: type ?? "",
+                        style: AppTextStyles.size12weight400().copyWith(
+                          color: AppColors.textBlack,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-              18.verticalSpace,
-            ],
+                18.verticalSpace,
+              ],
+            ),
           ),
         ],
       ),

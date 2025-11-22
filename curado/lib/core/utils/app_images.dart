@@ -19,6 +19,7 @@ class AppImages {
   static String get accountIcon => '${kSVGImagePath}account$kSVGType';
   static String get menuIcon => '${kSVGImagePath}menu$kSVGType';
   static String get next => '${kSVGImagePath}next$kSVGType';
+  static String get back => '${kSVGImagePath}back$kSVGType';
 
   ///PNG
   static String get curadoLogo => '${kPNGImagePath}curado_logo$kPngType';
