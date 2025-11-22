@@ -58,7 +58,7 @@ class AppRouter {
                 child: const HomeView(),
               );
             },
-            routes: [ ],
+            routes: [],
           ),
           GoRoute(
             parentNavigatorKey: _shellNavigatorKey,
@@ -127,7 +127,6 @@ class AppRouter {
           state.matchedLocation.startsWith(Pages.homeRoute.toPath()) ||
           state.matchedLocation.startsWith(Pages.catalogueRoute.toPath()) ||
           state.matchedLocation.startsWith(Pages.eventsRoute.toPath()) ||
-
           state.matchedLocation.startsWith(Pages.accountRoute.toPath());
 
       if (!isInitialized && !isGoingToSplash) {
