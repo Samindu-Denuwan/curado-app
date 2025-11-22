@@ -22,7 +22,7 @@ class BottomNavBar extends StatelessWidget {
             backgroundColor: AppColors.white,
             leading: Padding(
               padding: const EdgeInsets.only(left: 15),
-              child: Icon(Icons.menu, size: 35, color: AppColors.textBlack),
+              child: Icon(Icons.menu, size: 30, color: AppColors.textBlack),
             ),
             title: Image(image: AssetImage(AppImages.curadoLogo), height: 53),
           ),
