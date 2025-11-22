@@ -1,5 +1,10 @@
+import 'package:curado/core/themes/colors.dart';
+import 'package:curado/core/utils/app_images.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:solar_icons/solar_icons.dart';
 
 import '../../presentation/common_widgets/home_bottom_nav_bar.dart';
 import 'pages.dart';
@@ -11,6 +16,21 @@ class BottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(72),
+        child: SafeArea(
+          child: AppBar(
+            toolbarHeight: 72,
+            surfaceTintColor: Colors.transparent,
+            backgroundColor: AppColors.white,
+            leading: Padding(
+              padding: const EdgeInsets.only(left: 15),
+              child: Icon(Icons.menu, size: 35, color: AppColors.blackShade),
+            ),
+            title: Image(image: AssetImage(AppImages.curadoLogo), height: 53),
+          ),
+        ),
+      ),
       body: Stack(
         children: [
           Positioned.fill(

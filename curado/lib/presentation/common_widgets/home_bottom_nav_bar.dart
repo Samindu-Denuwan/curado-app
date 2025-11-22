@@ -108,7 +108,7 @@ class _HomeBottomNavigationViewState extends State<HomeBottomNavigationView> {
                 Text(
                   title ?? "",
                   textAlign: TextAlign.center,
-                  style: AppTextStyles.size10weight600.copyWith(
+                  style: AppTextStyles.size10weight600(fontFamily: "Public Sans").copyWith(
                     color: AppColors.neutral500,
                   ),
                 ),
