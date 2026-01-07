@@ -1,9 +1,10 @@
+import 'package:curado/data/models/inquiry_data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../core/routes/pages.dart';
+import '../../../data/db_helper.dart';
 import '../../../data/models/art_details_model.dart';
 import '../../common_widgets/common_button.dart';
 import '../../common_widgets/common_text_field.dart';
@@ -17,6 +18,7 @@ class ArtInquiryView extends StatelessWidget {
   final _mobileController = TextEditingController();
   final _emailController = TextEditingController();
   final _messageController = TextEditingController();
+  final DbHelper dbHelper = DbHelper();
 
   @override
   Widget build(BuildContext context) {
@@ -55,11 +57,49 @@ class ArtInquiryView extends StatelessWidget {
               isTextArea: true,
             ),
             25.verticalSpace,
-            CommonButton(name: "Send message", onTap: () {}),
+            CommonButton(
+              name: "Send message",
+              onTap: () {
+                addToDb(
+                  InquiryData(
+                    name: _nameController.text,
+                    mobile: _mobileController.text,
+                    email: _emailController.text,
+                    message: _messageController.text,
+                    title: artDetails?.art?.title,
+                  ),
+                  context,
+                );
+              },
+            ),
             32.verticalSpace,
           ],
         ),
       ),
     );
+  }
+
+  Future<void> addToDb(InquiryData inquiryData, BuildContext context) async {
+    if (_nameController.text.isNotEmpty &&
+        _mobileController.text.isNotEmpty &&
+        _emailController.text.isNotEmpty &&
+        _messageController.text.isNotEmpty) {
+      await dbHelper.insertInquiry(inquiryData);
+      clear();
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text("Inquiry added successfully!")));
+    } else {
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text("All fields are required")));
+    }
+  }
+
+  void clear() {
+    _nameController.clear();
+    _mobileController.clear();
+    _emailController.clear();
+    _messageController.clear();
   }
 }

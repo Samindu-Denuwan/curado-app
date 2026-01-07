@@ -89,10 +89,12 @@ class _HomeBottomNavigationViewState extends State<HomeBottomNavigationView> {
         alignment: Alignment.center,
         child: Container(
           height: 60,
-          width: 54,
+          width: 65,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
-            color: Colors.transparent,
+            color: widget.selectedIndex == index
+                ? Colors.black.withAlpha(15)
+                : Colors.transparent,
           ),
           child: InkWell(
             onTap: onTap,
