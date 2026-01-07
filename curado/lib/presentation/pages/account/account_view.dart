@@ -18,7 +18,7 @@ class AccountView extends StatelessWidget {
         children: [
           20.verticalSpace,
           PageTitleWidget(
-            title: 'MY ACCOUNT',
+            title: 'MY INQUIRIES',
             onTap: () =>
                 GoRouter.of(context).goNamed(Pages.homeRoute.toPathName()),
           ),

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../core/routes/routes.dart';
+import '../core/utils/app_sizer.dart';
 import 'injection.dart';
 
 class BaseApp extends ConsumerStatefulWidget {
@@ -19,6 +20,9 @@ class _BaseAppState extends ConsumerState<BaseApp> {
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) => AppSizer.setHomeIndicatorStatus(context),
+    );
   }
 
   @override

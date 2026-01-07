@@ -16,18 +16,21 @@ class NextButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            text ?? "",
-            style: AppTextStyles.size10weight400().copyWith(
-              color: AppColors.textBrown,
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              text ?? "",
+              style: AppTextStyles.size10weight400().copyWith(
+                color: AppColors.textBrown,
+              ),
             ),
-          ),
-          6.horizontalSpace,
-          SvgPicture.asset(width: 26, AppImages.next),
-        ],
+            6.horizontalSpace,
+            SvgPicture.asset(width: 26, AppImages.next),
+          ],
+        ),
       ),
     );
   }

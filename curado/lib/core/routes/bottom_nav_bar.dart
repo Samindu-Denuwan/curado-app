@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../presentation/common_widgets/home_bottom_nav_bar.dart';
+import '../utils/app_sizer.dart';
 import 'pages.dart';
 
 class BottomNavBar extends StatelessWidget {
@@ -39,20 +40,27 @@ class BottomNavBar extends StatelessWidget {
           ),
           Align(
             alignment: Alignment.bottomCenter,
-            child: HomeBottomNavigationView(
-              onHomeTab: () {
-                GoRouter.of(context).goNamed(Pages.homeRoute.toPathName());
-              },
-              onCatalogueTap: () {
-                GoRouter.of(context).goNamed(Pages.catalogueRoute.toPathName());
-              },
-              onEventsTap: () {
-                GoRouter.of(context).goNamed(Pages.eventsRoute.toPathName());
-              },
-              onAccountTap: () {
-                GoRouter.of(context).goNamed(Pages.accountRoute.toPathName());
-              },
-              selectedIndex: _calculateSelectedIndex(context),
+            child: Padding(
+              padding: EdgeInsets.only(
+                bottom: AppSizer.getHomeIndicatorStatus(),
+              ),
+              child: HomeBottomNavigationView(
+                onHomeTab: () {
+                  GoRouter.of(context).goNamed(Pages.homeRoute.toPathName());
+                },
+                onCatalogueTap: () {
+                  GoRouter.of(
+                    context,
+                  ).goNamed(Pages.catalogueRoute.toPathName());
+                },
+                onEventsTap: () {
+                  GoRouter.of(context).goNamed(Pages.eventsRoute.toPathName());
+                },
+                onAccountTap: () {
+                  GoRouter.of(context).goNamed(Pages.accountRoute.toPathName());
+                },
+                selectedIndex: _calculateSelectedIndex(context),
+              ),
             ),
           ),
         ],

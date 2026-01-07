@@ -33,6 +33,7 @@ class ArtDetailsView extends StatelessWidget {
               onTap: () =>
                   GoRouter.of(context).goNamed(Pages.homeRoute.toPathName()),
             ),
+            30.verticalSpace,
             CachedNetworkImage(
               imageUrl: artDetails?.art?.imgUrl ?? AppConstants.defaultImageUrl,
               imageBuilder: (context, imageProvider) => Container(

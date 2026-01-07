@@ -34,7 +34,6 @@ class _HomeBottomNavigationViewState extends State<HomeBottomNavigationView> {
       alignment: AlignmentGeometry.bottomCenter,
       child: Container(
         decoration: BoxDecoration(color: AppColors.white),
-        padding: const EdgeInsets.only(bottom: 20),
         child: Container(
           height: 78,
           decoration: BoxDecoration(color: AppColors.white),
@@ -66,7 +65,7 @@ class _HomeBottomNavigationViewState extends State<HomeBottomNavigationView> {
                 NavBarItem(
                   context: context,
                   index: 3,
-                  title: "Account",
+                  title: "Inquiry",
                   icon: AppImages.accountIcon,
                   onTap: widget.onAccountTap,
                 ),
@@ -108,9 +107,9 @@ class _HomeBottomNavigationViewState extends State<HomeBottomNavigationView> {
                 Text(
                   title ?? "",
                   textAlign: TextAlign.center,
-                  style: AppTextStyles.size10weight600(fontFamily: "Public Sans").copyWith(
-                    color: AppColors.neutral500,
-                  ),
+                  style: AppTextStyles.size10weight600(
+                    fontFamily: "Public Sans",
+                  ).copyWith(color: AppColors.neutral500),
                 ),
               ],
             ),

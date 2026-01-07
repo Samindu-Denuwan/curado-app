@@ -33,6 +33,7 @@ class _EventDetailViewState extends State<EventDetailView> {
               subTitle: widget.eventDetails?.date?.formatDateRange(),
               onTap: () => context.pop(),
             ),
+            30.verticalSpace,
             CachedNetworkImage(
               imageUrl:
                   widget.eventDetails?.imgUrl ?? AppConstants.defaultImageUrl,

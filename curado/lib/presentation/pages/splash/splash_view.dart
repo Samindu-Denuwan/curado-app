@@ -64,7 +64,7 @@ class _SplashViewState extends State<SplashView>
               ),
             );
           },
-          child: Image.asset(AppImages.curadoLogo, width: 200, height: 200),
+          child: Image.asset(AppImages.curadoLogo, width: 300, height: 200),
         ),
       ),
     );

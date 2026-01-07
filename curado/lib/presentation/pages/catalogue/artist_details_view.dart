@@ -29,6 +29,7 @@ class ArtistDetailsView extends StatelessWidget {
               title: artistDetails?.name?.toUpperCase(),
               onTap: () => context.pop(),
             ),
+            30.verticalSpace,
             CachedNetworkImage(
               imageUrl: artistDetails?.imgUrl ?? AppConstants.defaultImageUrl,
               imageBuilder: (context, imageProvider) => Container(
