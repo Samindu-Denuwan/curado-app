@@ -61,6 +61,7 @@ class ArtistCard extends StatelessWidget {
             child: Text(
               textAlign: TextAlign.center,
               name ?? "",
+              maxLines: 2,
               style: AppTextStyles.size10weight400().copyWith(
                 color: AppColors.textBrown,
               ),
