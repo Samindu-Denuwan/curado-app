@@ -8,6 +8,7 @@ class Pages {
   static const artistDetailsRoute = "artist_details";
   static const artDetailsRoute = "art_details";
   static const artInquiryRoute = "art_inquiry";
+  static const allArtWorksRoute = "all_art_works";
 }
 
 extension PagesExtension on String {

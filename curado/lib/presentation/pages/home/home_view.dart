@@ -22,7 +22,9 @@ class HomeView extends StatelessWidget {
             MainTitleWidget(
               title: "LATEST ARTWORKS",
               subTitle: "VIEW ALL ARTWORKS",
-              onTap: () {},
+              onTap: () {
+                context.pushNamed(Pages.allArtWorksRoute.toPathName());
+              },
             ),
             49.verticalSpace,
 

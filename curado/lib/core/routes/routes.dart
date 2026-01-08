@@ -3,6 +3,7 @@ import 'package:curado/data/models/art_details_model.dart';
 import 'package:curado/presentation/pages/account/account_view.dart';
 import 'package:curado/presentation/pages/catalogue/artist_details_view.dart';
 import 'package:curado/presentation/pages/events/events_view.dart';
+import 'package:curado/presentation/pages/home/all_art_works.dart';
 import 'package:curado/presentation/pages/home/art_inquiry_view.dart';
 import 'package:curado/presentation/pages/home/home_view.dart';
 import 'package:curado/presentation/pages/splash/splash_view.dart';
@@ -100,6 +101,30 @@ class AppRouter {
                     child: ArtInquiryView(
                       artDetails: state.extra as ArtDetails?,
                     ),
+                    transitionsBuilder:
+                        (
+                          BuildContext context,
+                          Animation<double> animation,
+                          Animation<double> secondaryAnimation,
+                          Widget child,
+                        ) {
+                          return FadeTransition(
+                            opacity: animation,
+                            child: child,
+                          );
+                        },
+                  );
+                },
+                routes: const [],
+              ),
+              GoRoute(
+                parentNavigatorKey: _shellNavigatorKey,
+                path: Pages.allArtWorksRoute.toPath(isSubRoute: true),
+                name: Pages.allArtWorksRoute.toPathName(),
+                pageBuilder: (context, state) {
+                  return CustomTransitionPage(
+                    key: state.pageKey,
+                    child: AllArtWorksView(),
                     transitionsBuilder:
                         (
                           BuildContext context,
